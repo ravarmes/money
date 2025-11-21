@@ -6,14 +6,15 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 .topbar h1{font-size:18px;color:var(--primary)}
 .top-actions{display:flex;gap:8px}
 .top-actions button,.import-label{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-weight:600;cursor:pointer}
+.top-actions button:hover,.import-label:hover{background:var(--hover);border-color:var(--primary)}
 .import-label{display:inline-flex;gap:8px;align-items:center}
 .import-label input{display:none}
 .tabs{display:flex;gap:8px;padding:10px;background:var(--bg);position:sticky;top:52px;z-index:9}
 .tabs button:not(#themeToggle){flex:1;background:var(--panel);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;cursor:pointer}
-.tabs button.active{background:var(--primary);color:#06192b}
+.tabs button.active{background:var(--primary);color:#06192b;border-color:var(--primary);box-shadow:0 0 0 2px var(--primary) inset}
 .subtabs{display:flex;gap:8px}
 .subtabs button{background:var(--panel);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;cursor:pointer}
-.subtabs button.active{background:var(--primary);color:#06192b}
+.subtabs button.active{background:var(--primary);color:#06192b;border-color:var(--primary)}
 main{padding:16px}
 .tab{display:none}
 .tab.active{display:block}
@@ -90,3 +91,10 @@ input[type="month"]::-webkit-calendar-picker-indicator{filter:invert(1)}
 [data-theme="light"] .form-row input,[data-theme="light"] .form-row select,[data-theme="light"] .form-row button,[data-theme="light"] .form-row label,
 [data-theme="light"] .toolbar input,[data-theme="light"] .toolbar select,[data-theme="light"] .toolbar button,
 [data-theme="light"] .lock-card input,[data-theme="light"] .subtabs button{background:#ffffff;color:#0f172a;border:1px solid #cbd5e1}
+[data-theme="light"] .tabs button.active{color:#06192b}
+[data-theme="dark"] .tabs button.active{color:#06192b}
+.tabs button:hover:not(.active):not(#themeToggle){border-color:var(--primary)}
+.subtabs button:hover:not(.active){border-color:var(--primary)}
+
+/* Auto-sync indicator */
+.import-label:has(#syncAutoChk:checked){border-color:var(--success);color:var(--success);background:var(--panel-alt)}
