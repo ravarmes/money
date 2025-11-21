@@ -1,0 +1,89 @@
+:root{--bg:#0f172a;--panel:#111827;--text:#e5e7eb;--muted:#9ca3af;--primary:#00d4ff;--danger:#ef4444;--success:#10b981;--border:#233044}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--panel);position:sticky;top:0;z-index:10}
+.topbar h1{font-size:18px;color:var(--primary)}
+.top-actions{display:flex;gap:8px}
+.top-actions button,.import-label{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-weight:600;cursor:pointer}
+.import-label{display:inline-flex;gap:8px;align-items:center}
+.import-label input{display:none}
+.tabs{display:flex;gap:8px;padding:10px;background:var(--bg);position:sticky;top:52px;z-index:9}
+.tabs button:not(#themeToggle){flex:1;background:var(--panel);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;cursor:pointer}
+.tabs button.active{background:var(--primary);color:#06192b}
+.subtabs{display:flex;gap:8px}
+.subtabs button{background:var(--panel);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;cursor:pointer}
+.subtabs button.active{background:var(--primary);color:#06192b}
+main{padding:16px}
+.tab{display:none}
+.tab.active{display:block}
+.subtab{display:none}
+.subtab.active{display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px}
+.card-title{font-weight:700;color:var(--muted);margin-bottom:8px}
+.value{font-size:28px;font-weight:800}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
+.form-row input,.form-row select,.form-row button{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
+.form-row button{background:var(--primary);color:#06192b;font-weight:700}
+.form-row label{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
+.toolbar{display:flex;gap:8px;margin-bottom:8px}
+.toolbar input,.toolbar select,.toolbar button{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
+.grid button{background:var(--danger);color:#06192b;border:none;border-radius:8px;padding:8px 10px;font-weight:700;cursor:pointer}
+.grid button.edit{background:var(--primary)}
+.grid button.save{background:var(--success)}
+.grid button.cancel{background:#374151;color:var(--text)}
+.grid{width:100%;border-collapse:collapse}
+.grid th,.grid td{border-bottom:1px solid var(--border);padding:8px;text-align:left}
+.grid tfoot td{font-weight:700}
+.grid input[type="checkbox"]{transform:scale(1.2)}
+.totals{margin-top:8px}
+.ok{color:var(--success)}
+.bad{color:var(--danger)}
+#lock{position:fixed;inset:0;background:#061020d9;backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center}
+.lock-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;width:min(360px,92vw);display:grid;gap:10px}
+.lock-card h1{margin:0;color:var(--primary)}
+.lock-card input{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
+.lock-card button{background:var(--primary);color:#06192b;border:none;border-radius:8px;padding:10px;font-weight:700;cursor:pointer}
+.lock-hint{display:grid;gap:8px}
+canvas{width:100%;background:var(--panel);border:1px solid var(--border);border-radius:8px}
+.invest-small{height:120px}
+#invStocksDonut,#invFiisDonut,#invReturnsChart,#invReturnsFiisChart{height:140px;max-width:560px;margin:0 auto}
+.chart-tooltip{position:fixed;background:var(--panel);border:1px solid var(--border);color:var(--text);padding:8px 10px;border-radius:8px;font-size:12px;pointer-events:none;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+@media (max-width:560px){.tabs{top:56px}.form-row{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}canvas{height:140px}}
+@media (max-width:480px){.form-row{grid-template-columns:1fr}.top-actions{flex-wrap:wrap}.tabs button{font-size:14px}canvas{height:120px}}
+:root{--bg:#0b1220;--panel:#0e1a2b;--panel-alt:#102031;--hover:#14243a;--text:#e5e7eb;--muted:#9ca3af;--primary:#00d4ff;--danger:#ef4444;--success:#10b981;--border:#233044}
+[data-theme="light"]{--bg:#f7fafc;--panel:#ffffff;--panel-alt:#f2f5f9;--hover:#e9eef5;--text:#0f172a;--muted:#475569;--primary:#0ea5e9;--danger:#e11d48;--success:#16a34a;--border:#cbd5e1}
+
+body{background:var(--bg);color:var(--text)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:12px}
+.tabs button:not(#themeToggle){background:var(--panel);border:1px solid var(--border);color:var(--text)}
+.tabs button.active{background:var(--primary);color:#06192b}
+
+#themeToggle{margin-left:auto;background:transparent;border:none;color:var(--text);width:auto;height:auto;border-radius:0;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;padding:4px}
+#themeToggle:hover{background:transparent}
+
+.toolbar input,.toolbar select,.toolbar button{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
+.grid button{background:var(--danger);color:#06192b;border:none;border-radius:8px;padding:8px 10px;font-weight:700;cursor:pointer}
+.grid button.edit{background:var(--primary)}
+.grid button.save{background:var(--success)}
+.grid button.cancel{background:#374151;color:var(--text)}
+
+.grid tbody tr:nth-child(odd){background:var(--panel-alt)}
+.grid tbody tr:hover{background:var(--hover)}
+
+input[type="date"]{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
+input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(1)}
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator{filter:none}
+/* polish: hover/focus and shadows */
+.tabs button:hover{background:var(--hover)}
+.subtabs button:hover{background:var(--hover)}
+.form-row input:focus,.form-row select:focus,.form-row button:focus,
+.toolbar input:focus,.toolbar select:focus,.toolbar button:focus,
+.lock-card input:focus,.lock-card button:focus,#themeToggle:focus{outline:none;box-shadow:0 0 0 2px var(--primary)}
+[data-theme="light"] .card{box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+[data-theme="dark"] .card{box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+.form-row input::placeholder,.toolbar input::placeholder{color:var(--muted)}
+[data-theme="light"] .form-row input,[data-theme="light"] .form-row select,[data-theme="light"] .form-row button,[data-theme="light"] .form-row label,
+[data-theme="light"] .toolbar input,[data-theme="light"] .toolbar select,[data-theme="light"] .toolbar button,
+[data-theme="light"] .lock-card input,[data-theme="light"] .subtabs button{background:#ffffff;color:#0f172a;border:1px solid #cbd5e1}
