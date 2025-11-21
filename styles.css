@@ -75,6 +75,9 @@ body{background:var(--bg);color:var(--text)}
 input[type="date"]{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
 input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(1)}
 [data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator{filter:none}
+input[type="month"]{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px}
+input[type="month"]::-webkit-calendar-picker-indicator{filter:invert(1)}
+[data-theme="light"] input[type="month"]::-webkit-calendar-picker-indicator{filter:none}
 /* polish: hover/focus and shadows */
 .tabs button:hover{background:var(--hover)}
 .subtabs button:hover{background:var(--hover)}
