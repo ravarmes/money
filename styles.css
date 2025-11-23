@@ -80,7 +80,7 @@ input[type="month"]{background:var(--panel);color:var(--text);border:1px solid v
 input[type="month"]::-webkit-calendar-picker-indicator{filter:invert(1)}
 [data-theme="light"] input[type="month"]::-webkit-calendar-picker-indicator{filter:none}
 /* polish: hover/focus and shadows */
-.tabs button:hover{background:var(--hover)}
+.tabs button:hover:not(.active){background:var(--hover)}
 .subtabs button:hover:not(.active){background:var(--hover)}
 .form-row input:focus,.form-row select:focus,.form-row button:focus,
 .toolbar input:focus,.toolbar select:focus,.toolbar button:focus,
@@ -96,6 +96,8 @@ input[type="month"]::-webkit-calendar-picker-indicator{filter:invert(1)}
 .tabs button:hover:not(.active):not(#themeToggle){border-color:var(--primary)}
 .subtabs button:hover:not(.active){border-color:var(--primary)}
 .subtabs button.active:hover{background:var(--primary);color:#06192b;border-color:var(--primary)}
+
+.tabs button.active:hover{background:var(--primary);color:#06192b;border-color:var(--primary)}
 
 /* Auto-sync indicator */
 .import-label:has(#syncAutoChk:checked){border-color:var(--success);color:var(--success);background:var(--panel-alt)}
