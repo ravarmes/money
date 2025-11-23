@@ -56,8 +56,8 @@ canvas{width:100%;background:var(--panel);border:1px solid var(--border);border-
 
 /* Responsividade das abas principais (rolagem horizontal no mobile) */
 @media (max-width:560px){
-  .tabs{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
-  .tabs button:not(#themeToggle){flex:0 0 auto}
+  .tabs{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable;padding-right:48px;scroll-snap-type:x proximity}
+  .tabs button:not(#themeToggle){flex:0 0 auto;scroll-snap-align:start}
 }
 :root{--bg:#0b1220;--panel:#0e1a2b;--panel-alt:#102031;--hover:#14243a;--text:#e5e7eb;--muted:#9ca3af;--primary:#00d4ff;--danger:#ef4444;--success:#10b981;--border:#233044}
 [data-theme="light"]{--bg:#f7fafc;--panel:#ffffff;--panel-alt:#f2f5f9;--hover:#e9eef5;--text:#0f172a;--muted:#475569;--primary:#0ea5e9;--danger:#e11d48;--success:#16a34a;--border:#cbd5e1}
