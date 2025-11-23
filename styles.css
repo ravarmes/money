@@ -100,19 +100,29 @@ input[type="month"]::-webkit-calendar-picker-indicator{filter:invert(1)}
 /* Auto-sync indicator */
 .import-label:has(#syncAutoChk:checked){border-color:var(--success);color:var(--success);background:var(--panel-alt)}
 
-/* Responsividade das tabelas em telas pequenas */
 @media (max-width:560px){
   .card{overflow-x:auto}
   .grid th,.grid td{padding:6px;font-size:13px}
-  /* Lançamentos: esconder Tipo, Categoria e Recorrência */
   #ledgerGrid th:nth-child(2),#ledgerGrid td:nth-child(2),
   #ledgerGrid th:nth-child(4),#ledgerGrid td:nth-child(4),
   #ledgerGrid th:nth-child(6),#ledgerGrid td:nth-child(6){display:none}
-  /* Cartão: esconder Categoria */
   #cardGrid th:nth-child(3),#cardGrid td:nth-child(3){display:none}
-  /* Operações: esconder Data e Q */
   #invOpsGrid th:nth-child(3),#invOpsGrid td:nth-child(3),
   #invOpsGrid th:nth-child(4),#invOpsGrid td:nth-child(4){display:none}
-  /* Ativos: esconder Média */
   #invAssetsGrid th:nth-child(4),#invAssetsGrid td:nth-child(4){display:none}
+  #ledgerGrid tr.expanded td:nth-child(2),#ledgerGrid tr.expanded td:nth-child(4),#ledgerGrid tr.expanded td:nth-child(6){display:block}
+  #cardGrid tr.expanded td:nth-child(3){display:block}
+  #invOpsGrid tr.expanded td:nth-child(3),#invOpsGrid tr.expanded td:nth-child(4){display:block}
+  #invAssetsGrid tr.expanded td:nth-child(4){display:block}
+}
+
+.grid thead th{position:sticky;top:0;background:var(--panel);z-index:1}
+
+@media (max-width:480px){
+  .grid thead{display:none}
+  .grid tbody tr{display:block;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--panel)}
+  .grid td{display:block;border:none}
+  .grid td::before{content:attr(data-label);font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+  .grid td.actions{text-align:right}
+  .more-btn{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 10px}
 }
