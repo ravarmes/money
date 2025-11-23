@@ -52,13 +52,15 @@ canvas{width:100%;background:var(--panel);border:1px solid var(--border);border-
 #invStocksDonut,#invFiisDonut,#invReturnsChart,#invReturnsFiisChart{height:140px;max-width:560px;margin:0 auto}
 .chart-tooltip{position:fixed;background:var(--panel);border:1px solid var(--border);color:var(--text);padding:8px 10px;border-radius:8px;font-size:12px;pointer-events:none;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,0.3)}
 @media (max-width:560px){.tabs{top:56px}.form-row{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}canvas{height:140px}}
-@media (max-width:480px){.form-row{grid-template-columns:1fr}.top-actions{flex-wrap:wrap}.tabs button{font-size:14px}canvas{height:120px}}
+@media (max-width:480px){.form-row{grid-template-columns:1fr}.top-actions{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap;-webkit-overflow-scrolling:touch}.top-actions>*{flex:0 0 auto}.tabs button{font-size:14px}canvas{height:120px}}
 
 /* Responsividade das abas principais (rolagem horizontal no mobile) */
 @media (max-width:560px){
   .tabs{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable;padding-right:48px;scroll-snap-type:x proximity}
   .tabs button:not(#themeToggle){display:inline-flex;flex:0 0 auto;margin-right:8px;scroll-snap-align:start}
   #themeToggle{display:inline-flex;margin-left:8px}
+  .top-actions{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap;-webkit-overflow-scrolling:touch}
+  .top-actions>*{flex:0 0 auto}
 }
 :root{--bg:#0b1220;--panel:#0e1a2b;--panel-alt:#102031;--hover:#14243a;--text:#e5e7eb;--muted:#9ca3af;--primary:#00d4ff;--danger:#ef4444;--success:#10b981;--border:#233044}
 [data-theme="light"]{--bg:#f7fafc;--panel:#ffffff;--panel-alt:#f2f5f9;--hover:#e9eef5;--text:#0f172a;--muted:#475569;--primary:#0ea5e9;--danger:#e11d48;--success:#16a34a;--border:#cbd5e1}
